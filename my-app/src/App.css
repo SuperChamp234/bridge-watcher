@@ -1,20 +1,41 @@
 .App {
-  text-align: center;
-
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-.Temperature {
-  font-weight: italic;
-}
-
-.App-header {
+.button-group {
   display: flex;
+  justify-content: center;
+  margin: 20px;
+}
+.App-body {
+  color: #192841;
+  display: flex;
+  flex-direction: column;
+  padding-left: 5%; 
+  padding-right: 5%;
+  align-items: flex-start;
+  justify-content: center;
+}
+.Bridge-info {
+  display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  
 }
-
+.App-header {
+  padding-left:20px;
+  background-color: #192841;
+  color: white;
+  display: flex;
+  align-items: start;
+  justify-content: flex-start;
+  font-size: calc(10px + 2vmin);
+  filter: drop-shadow(0px 5px 5px rgba(0, 0, 0, 0.5));
+}
+.emoji {
+  color: none;
+}
 .App-link {
   color: #61dafb;
 }

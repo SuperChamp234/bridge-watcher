@@ -7,29 +7,20 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 
-function createData(timestamp, tension) {
-  return { timestamp, tension};
-}
-
-const rows = [
-  createData('2021-12-17', 159),
-  createData('2021-12-18', 237),
-  createData('2021-12-19', 262),
-
-];
-
-export default function Database() {
+export default function Database(props) {
   return (
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
         <TableHead>
           <TableRow>
             <TableCell>Timestamp</TableCell>
+            <TableCell align="right">Current Load (kg)</TableCell>
+            <TableCell align="right">Compression (N)</TableCell>
             <TableCell align="right">Tension (N)</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
-          {rows.map((row) => (
+          {props.data.map((row) => (
             <TableRow
               key={row.timestamp}
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
@@ -37,7 +28,9 @@ export default function Database() {
               <TableCell component="th" scope="row">
                 {row.timestamp}
               </TableCell>
-              <TableCell align="right">{row.tension}%</TableCell>
+              <TableCell align="right">{row.load}</TableCell>
+              <TableCell align="right">{row.compression}</TableCell>
+              <TableCell align="right">{row.tension}</TableCell>
             </TableRow>
           ))}
         </TableBody>
