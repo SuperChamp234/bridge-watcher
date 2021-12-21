@@ -92,14 +92,14 @@ class App extends React.Component {
           </ButtonGroup>
           <Database data={this.state.data}></Database>
         </div>
-        <Button
+        {/* <Button
           variant="contained"
           onClick={() => {
             this.sendOverLoad();
           }}
         >
           Test Overload
-        </Button>
+        </Button> */}
       </div>
     );
   }

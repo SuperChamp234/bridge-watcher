@@ -1,20 +1,20 @@
 const bridgeData = [
     {
         timestamp: "2021-12-18",
-        load: "28.5",
-        compression: "52.9",
+        load: "8472",
+        vehicles: "52",
         tension: "182.3"
     },
     {
         timestamp: "2021-12-19",
-        load: "40.5",
-        compression: "18.9",
+        load: "10585",
+        vehicles: "82",
         tension: "402.3"
     },
     {
         timestamp: "2021-12-20",
-        load: "125.2",
-        compression: "102.4",
+        load: "14382",
+        vehicles: "104",
         tension: "52.7"
     },
 ]

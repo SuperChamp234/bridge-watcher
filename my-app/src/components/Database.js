@@ -6,16 +6,17 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+import "../App.css";
 
 export default function Database(props) {
   return (
-    <TableContainer component={Paper}>
+    <TableContainer className="table"component={Paper}>
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
         <TableHead>
           <TableRow>
             <TableCell>Timestamp</TableCell>
             <TableCell align="right">Current Load (kg)</TableCell>
-            <TableCell align="right">Compression (N)</TableCell>
+            <TableCell align="right"># of Vehicles</TableCell>
             <TableCell align="right">Tension (N)</TableCell>
           </TableRow>
         </TableHead>
@@ -29,7 +30,7 @@ export default function Database(props) {
                 {row.timestamp}
               </TableCell>
               <TableCell align="right">{row.load}</TableCell>
-              <TableCell align="right">{row.compression}</TableCell>
+              <TableCell align="right">{row.vehicles}</TableCell>
               <TableCell align="right">{row.tension}</TableCell>
             </TableRow>
           ))}
