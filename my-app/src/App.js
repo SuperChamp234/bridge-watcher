@@ -9,6 +9,8 @@ class App extends React.Component {
     this.state = {
       data: bridgeData,
       maxLoad: 0,
+      address: null,
+      topic: null
     };
   }
   setMaxLoad = () => {
@@ -18,6 +20,39 @@ class App extends React.Component {
         maxLoad: load,
       });
     }
+  };
+  setAddress = () => {
+    let adr = prompt("Enter address");
+    if (adr != null) {
+      this.setState({
+        address: adr,
+      });
+    }
+  };
+  setTopic = () => {
+    let topic = prompt("Enter topic");
+    if (topic != null) {
+      this.setState({
+        topic: topic,
+      });
+    }
+  };
+  sendOverLoad = () => {
+    let today = new Date();
+    let date =
+      today.getFullYear() +
+      "-" +
+      (today.getMonth() + 1) +
+      "-" +
+      today.getDate();
+    let time =
+      today.getHours() +
+      ":" +
+      today.getMinutes() +
+      ":" +
+      today.getSeconds();
+    let dateTime = date + " " + time;
+    alert("⚠️ Overload during " + dateTime + " ⚠️");
   };
 
   render() {
@@ -29,34 +64,38 @@ class App extends React.Component {
         <div className="App-body">
           <h2>Vashi Bridge</h2>
           <h4>Max Load = {this.state.maxLoad} kg</h4>
-          <Button
-            variant="contained"
-            onClick={() => {
-              this.setMaxLoad();
-            }}
-          >
-            Set Load Capacity
-          </Button>
+          <ButtonGroup>
+            <Button
+              variant="contained"
+              onClick={() => {
+                this.setMaxLoad();
+              }}
+            >
+              Set Load Capacity
+            </Button>
+            <Button
+              variant="contained"
+              onClick={() => {
+                this.setAddress();
+              }}
+            >
+              Set Address
+            </Button>
+            <Button
+              variant="contained"
+              onClick={() => {
+                this.setTopic();
+              }}
+            >
+              Set Topic
+            </Button>
+          </ButtonGroup>
           <Database data={this.state.data}></Database>
         </div>
         <Button
           variant="contained"
           onClick={() => {
-            let today = new Date();
-            let date =
-              today.getFullYear() +
-              "-" +
-              (today.getMonth() + 1) +
-              "-" +
-              today.getDate();
-            let time =
-              today.getHours() +
-              ":" +
-              today.getMinutes() +
-              ":" +
-              today.getSeconds();
-            let dateTime = date + " " + time;
-            alert("⚠️ Overload during " + dateTime + " ⚠️");
+            this.sendOverLoad();
           }}
         >
           Test Overload
