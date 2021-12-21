@@ -2,7 +2,10 @@ import * as React from "react";
 import Database from "./components/Database";
 import bridgeData from "./bridgeData";
 import { Button, ButtonGroup } from "@mui/material";
+import Logo from "./Logo.svg";
+import Vashibridge from "./img/Vashi-bridge.png"
 import "./App.css";
+
 class App extends React.Component {
   constructor() {
     super();
@@ -58,48 +61,72 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <h1 className>Bridge Watcher 🌉</h1>
-        </header>
-        <div className="App-body">
-          <h2>Vashi Bridge</h2>
-          <h4>Max Load = {this.state.maxLoad} kg</h4>
-          <ButtonGroup>
-            <Button
-              variant="contained"
-              onClick={() => {
-                this.setMaxLoad();
-              }}
-            >
-              Set Load Capacity
-            </Button>
-            <Button
-              variant="contained"
-              onClick={() => {
-                this.setAddress();
-              }}
-            >
-              Set Address
-            </Button>
-            <Button
-              variant="contained"
-              onClick={() => {
-                this.setTopic();
-              }}
-            >
-              Set Topic
-            </Button>
-          </ButtonGroup>
-          <Database data={this.state.data}></Database>
+        <div className="Background-image">
+          <header className="App-header">
+            <img src={Logo} height={95} width={95}/>
+            <div className="Header-title">
+              <h1>Bridge Watcher</h1>
+            </div>
+          </header>
+          <div className="App-body">
+            <div className="row">
+              <div className="col">
+                <div className="Bridge-title">
+                  <h2>Vashi Bridge</h2>
+                </div>
+                <h4>Max Load = {this.state.maxLoad} kg</h4>
+                <ButtonGroup orientation="vertical">
+                  <Button
+                    size="large"
+                    variant="contained"
+                    onClick={() => {
+                      this.setMaxLoad();
+                    }}
+                  >
+                    Set Load Capacity
+                  </Button>
+                
+                  <Button
+                    size="large"
+                    variant="contained"
+                    onClick={() => {
+                      this.setAddress();
+                    }}
+                  >
+                    Set Address
+                  </Button>
+                
+                  <Button
+                    size="large" 
+                    variant="contained"
+                    onClick={() => {
+                      this.setTopic();
+                    }}
+                  >
+                    Set Topic
+                  </Button>
+                </ButtonGroup>
+              </div>
+              <div className="ImagePosition">
+                <img src={Vashibridge} width={1000}/>
+              </div>
+            </div>
+            <Database data={this.state.data}></Database>
+          </div>
+          {/* <Button
+            variant="contained"
+            onClick={() => {
+              this.sendOverLoad();
+            }}
+          >
+            Test Overload
+          </Button> */}
+          <div>
+            <footer className="App-footer">
+              hi
+            </footer>
+          </div>
         </div>
-        {/* <Button
-          variant="contained"
-          onClick={() => {
-            this.sendOverLoad();
-          }}
-        >
-          Test Overload
-        </Button> */}
       </div>
     );
   }

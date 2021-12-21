@@ -2,13 +2,17 @@
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   color: #dfded4
 }
-
-.button-group {
-  display: flex;
-  justify-content: center;
-  margin: 20px;
+.Button-color {
+  background-color: #242142;
+}
+.Background-image {
+  background-image: url(./img/Background-Element-4K.png);
+  background-position: 'center';
+  background-repeat: 'no-repeat';
+  background-size: 1920px 1080px;
 }
 .App-body {
+  font-family: 'Poppins';
   color: #192841;
   display: flex;
   flex-direction: column;
@@ -17,22 +21,32 @@
   align-items: flex-start;
   justify-content: center;
 }
+.Bridge-title {
+  padding-top: 40px;
+  font-family: 'Akira Expanded Demo';
+  font-size: 20px;
+  color:#564F99;
+}
 .Bridge-info {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  
 }
 .App-header {
-  padding-left:20px;
-  background-color: #192841;
+  height: 100px;
+  border-radius: 0px 0px 50px 50px;
+  padding-left:50px;
+  background-color: #564F99;
   color: white;
   display: flex;
   align-items: start;
-  justify-content: flex-start;
+  justify-content: center-start;
   font-size: calc(10px + 2vmin);
-  filter: drop-shadow(0px 5px 5px rgba(0, 0, 0, 0.5));
+  filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.5));
+}
+.App-footer {
+  height: 115px;
 }
 .emoji {
   color: none;
@@ -40,8 +54,25 @@
 .App-link {
   color: #61dafb;
 }
-
+.Header-title {
+  font-family: "Akira Expanded Demo";
+  font-size: 20px;
+  margin-left: 10px;
+}
 .table {
-  margin-top: 30px;
+  margin-top: 50px;
   filter: drop-shadow(5px 5px 25px rgba(0, 0, 0, 0.5));
+}
+.row {
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+}
+.col {
+  display:flex;
+  flex-direction: column;
+}
+.ImagePosition {
+  display:flex;
+  margin-left: 100px;
 }
