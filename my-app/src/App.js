@@ -66,7 +66,7 @@ class App extends React.Component {
     this.setState ({
       data: updatedData
     });
-    this.timer = setInterval(() => this.getData(), 60000);
+    this.timer = setInterval(() => this.getData(), 600000);
   };
 
   getData=async ()=>{

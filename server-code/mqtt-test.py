@@ -43,5 +43,5 @@ while(True):
             "tension": str(rd.randint(20,35)),
             }
     client.publish("test", json.dumps(data))
-    sleep(30)
+    sleep(600)
 client.disconnect()
