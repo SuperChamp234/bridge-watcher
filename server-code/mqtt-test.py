@@ -4,7 +4,6 @@ import json
 from datetime import datetime
 import random as rd
 from time import sleep
-now = datetime.now()
 
 def on_connect(client, userdata, flags, rc):
 
@@ -35,10 +34,12 @@ client.on_connect= on_connect                      #attach function to callback
 client.on_publish= on_publish
 client.connect(broker_address,port,60) #connect
 while(True):
+    now = datetime.now()
     data = {
             "timestamp":  now.strftime("%d/%m/%Y %H:%M:%S"),
             "load": str(rd.randint(25,30)),
             "compression": str(rd.randint(20,35)),
+            "vehicles": str(rd.randint(5,20)),
             "tension": str(rd.randint(20,35)),
             }
     client.publish("test", json.dumps(data))

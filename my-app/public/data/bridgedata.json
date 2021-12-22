@@ -1,34 +1,11 @@
 {
     "data": [
         {
-            "timestamp": "2021-12-18",
-            "load": "28.5",
-            "compression": "52.9",
-            "tension": "182.3"
-        },
-        {
-            "timestamp": "2021-12-19",
-            "load": "40.5",
-            "compression": "18.9",
-            "tension": "402.3"
-        },
-        {
-            "timestamp": "2021-12-20",
-            "load": "125.2",
-            "compression": "102.4",
-            "tension": "52.7"
-        },
-        {
-            "timestamp": "2021-12-20",
-            "load": "125.2",
-            "compression": "102.4",
-            "tension": "52.7"
-        },
-        {
-            "timestamp": "2021-12-18",
-            "load": "28.5",
-            "compression": "52.9",
-            "tension": "182.3"
+            "timestamp":  "22-12-2021 2:42:41",
+            "load": "25",
+            "compression": "20",
+            "vehicles": "8",
+            "tension": "27"
         }
     ]
 }
