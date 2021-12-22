@@ -3,7 +3,7 @@ import time
 import json
 
 
-def write_json(new_data, filename='../my-app/public/data/data.json'):
+def write_json(new_data, filename='~/bridge-watcher/my-app/build/data/bridgedata.json'):
     with open(filename,'r+') as file:
           # First we load existing data into a dict.
         file_data = json.load(file)
