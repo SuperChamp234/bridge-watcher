@@ -9,12 +9,15 @@ import "./App.css";
 class App extends React.Component {
   constructor() {
     super();
+    
     this.state = {
       data: bridgeData,
       maxLoad: 0,
       address: null,
       topic: null
     };
+    this.getData = this.getData.bind(this);
+    this.handleJSONMessage = this.handleJSONMessage.bind(this);
   }
   setMaxLoad = () => {
     let load = prompt("Enter max load of the bridge in kg", "0");
@@ -58,32 +61,22 @@ class App extends React.Component {
     alert("⚠️ Overload during " + dateTime + " ⚠️");
   };
 
-  handleJSONMessage = (message) => {
-    let updatedData = JSON.parse(message);
+  handleJSONMessage(message) {
+    let updatedData = message;
     this.setState ({
       data: updatedData
     });
-    this.timer = setInterval(() => this.getData(), 600000);
+    this.timer = setInterval(() => this.getData(), 60000);
   };
 
-  getData=()=>{
-    fetch('./server-code/data.json'
-    ,{
+  getData=async ()=>{
+    let response = await fetch('data/bridgedata.json',{
       headers : { 
         'Content-Type': 'application/json',
         'Accept': 'application/json'
-       }
-    }
-    )
-      .then(function(response){
-        console.log(response)
-        return response.json();
-      })
-      .then(function(myJson) {
-        console.log("myJson");
-        console.log(myJson);
-        this.state.handleJSONMessage(myJson);
-      });
+       }})
+    let data = await response.json();
+    this.handleJSONMessage(data.data)
   }
 
   render() {

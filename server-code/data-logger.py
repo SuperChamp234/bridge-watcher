@@ -3,7 +3,7 @@ import time
 import json
 
 
-def write_json(new_data, filename='data.json'):
+def write_json(new_data, filename='../my-app/public/data/data.json'):
     with open(filename,'r+') as file:
           # First we load existing data into a dict.
         file_data = json.load(file)
@@ -33,7 +33,7 @@ def on_message(client, userdata, message):
 
 Connected = False   #global variable for the state of the connection
 
-broker_address= "20.204.109.105"  #Broker address
+broker_address= "bridgewatcher.centralindia.cloudapp.azure.com"  #Broker address
 port = 1883                         #Broker port
 user = "BridgeWatcherAdmin"                    #Connection username
 password = "BridgeWatcherAdmin"            #Connection password

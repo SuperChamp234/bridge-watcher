@@ -29,6 +29,8 @@ export default function Database(props) {
               <TableCell component="th" scope="row">
                 {row.timestamp}
               </TableCell>
+              {console.log("Printing row")}
+              {console.log(row)}
               <TableCell align="right">{row.load}</TableCell>
               <TableCell align="right">{row.vehicles}</TableCell>
               <TableCell align="right">{row.tension}</TableCell>
