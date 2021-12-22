@@ -3,31 +3,31 @@
         {
             "timestamp": "2021-12-18",
             "load": "28.5",
-            "compression": "52.9",
+            "vehicles": "52",
             "tension": "182.3"
         },
         {
             "timestamp": "2021-12-19",
             "load": "40.5",
-            "compression": "18.9",
+            "vehicles": "18",
             "tension": "402.3"
         },
         {
             "timestamp": "2021-12-20",
             "load": "125.2",
-            "compression": "102.4",
+            "vehicles": "102",
             "tension": "52.7"
         },
         {
             "timestamp": "2021-12-20",
             "load": "125.2",
-            "compression": "102.4",
+            "vehicles": "102",
             "tension": "52.7"
         },
         {
             "timestamp": "2021-12-18",
             "load": "28.5",
-            "compression": "52.9",
+            "vehicles": "53",
             "tension": "182.3"
         }
     ]

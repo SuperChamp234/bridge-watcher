@@ -2,7 +2,7 @@ import * as React from "react";
 import Database from "./components/Database";
 import bridgeData from "./bridgeData";
 import { Button, ButtonGroup } from "@mui/material";
-import Logo from "./Logo.svg";
+import Logo from "./logo.svg";
 import Vashibridge from "./img/Vashi-bridge.png"
 import "./App.css";
 
@@ -58,12 +58,41 @@ class App extends React.Component {
     alert("⚠️ Overload during " + dateTime + " ⚠️");
   };
 
+  handleJSONMessage = (message) => {
+    let updatedData = JSON.parse(message);
+    this.setState ({
+      data: updatedData
+    });
+    this.timer = setInterval(() => this.getData(), 600000);
+  };
+
+  getData=()=>{
+    fetch('./server-code/data.json'
+    ,{
+      headers : { 
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+       }
+    }
+    )
+      .then(function(response){
+        console.log(response)
+        return response.json();
+      })
+      .then(function(myJson) {
+        console.log("myJson");
+        console.log(myJson);
+        this.state.handleJSONMessage(myJson);
+      });
+  }
+
   render() {
+    this.getData();
     return (
       <div className="App">
         <div className="Background-image">
           <header className="App-header">
-            <img src={Logo} height={95} width={95}/>
+            <img src={Logo} height={95} width={95} alt="Logo"/>
             <div className="Header-title">
               <h1>Bridge Watcher</h1>
             </div>
@@ -77,6 +106,9 @@ class App extends React.Component {
                 <h4>Max Load = {this.state.maxLoad} kg</h4>
                 <ButtonGroup orientation="vertical">
                   <Button
+                    style={{
+                      backgroundColor: "#564F99"
+                    }}
                     size="large"
                     variant="contained"
                     onClick={() => {
@@ -87,6 +119,9 @@ class App extends React.Component {
                   </Button>
                 
                   <Button
+                    style={{
+                      backgroundColor: "#564F99"
+                    }}
                     size="large"
                     variant="contained"
                     onClick={() => {
@@ -97,6 +132,9 @@ class App extends React.Component {
                   </Button>
                 
                   <Button
+                    style={{
+                      backgroundColor: "#564F99"
+                    }}
                     size="large" 
                     variant="contained"
                     onClick={() => {
@@ -108,7 +146,7 @@ class App extends React.Component {
                 </ButtonGroup>
               </div>
               <div className="ImagePosition">
-                <img src={Vashibridge} width={1000}/>
+                <img src={Vashibridge} width={1000} alt="Bridge"/>
               </div>
             </div>
             <Database data={this.state.data}></Database>
@@ -122,9 +160,6 @@ class App extends React.Component {
             Test Overload
           </Button> */}
           <div>
-            <footer className="App-footer">
-              hi
-            </footer>
           </div>
         </div>
       </div>
